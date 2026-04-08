@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>ARES Bikes - Credits</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #FFFDF1;
+      color: #000000;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: #FFFDF1;
+      padding: 10px 40px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .logo-section img {
+      width: 45px;
+    }
+
+    .logo-section h1 {
+      font-family: 'Poppins', sans-serif;
+      color: #000000;
+      font-size: 24px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    .center-nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center-nav a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+
+    .center-nav a:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .search-box input {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
+      width: 180px;
+      background: #E8E6D9;
+      color: #000000;
+    }
+
+    .search-box select {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      margin-top: 5px;
+      padding: 8px;
+      border: 1px solid #999;
+      border-radius: 10px;
+      background: #808080;
+      color: #FFFFFF;
+      font-size: 13px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .search-box input:focus + select,
+    .search-box select:hover {
+      display: block;
+    }
+
+    .cart-section {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .cart-section a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cart-section a:hover {
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    .cart-section img {
+      width: 30px;
+      filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+    }
+
+    section {
+      padding-top: 120px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+      min-height: 100vh;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #000000;
+      margin-bottom: 30px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .credits-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 15px;
+      padding: 50px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .credits-intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .credits-intro p {
+      font-size: 18px;
+      color: #000000;
+      line-height: 1.8;
+    }
+
+    .credit-section {
+      margin-bottom: 35px;
+      padding: 25px;
+      background: #ffffff;
+      
+    }
+
+    .credit-section h3 {
+      font-size: 24px;
+      color: #000000;
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .credit-section p {
+      font-size: 16px;
+      color: #000000;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .credit-section a {
+      color: #0066CC;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .credit-section a:hover {
+      text-decoration: underline;
+    }
+
+    .credit-label {
+      font-weight: bold;
+      color: #000000;
+    }
+
+    footer {
+      background: #3c3f39;
+      padding: 40px 60px 20px 60px;
+      color: #FCF9EA;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-logo img {
+      width: 80px;
+    }
+
+    .footer-logo h3 {
+      font-size: 32px;
+    }
+
+    .footer-section p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .contact-info svg {
+      width: 20px;
+      height: 20px;
+      fill: #FCF9EA;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(252, 249, 234, 0.3);
+      padding-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 1024px) {
+      header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 15px;
+      }
+      
+      .logo-section {
+        justify-content: center;
+      }
+      
+      .logo-section h1 {
+        font-size: 20px;
+      }
+
+      .center-nav {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      
+      .center-nav a {
+        font-size: 14px;
+      }
+
+      .search-box input {
+        width: 150px;
+      }
+      
+      .cart-section {
+        justify-content: center;
+      }
+      
+      .cart-section a {
+        font-size: 14px;
+      }
+      
+      .cart-section img {
+        width: 25px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-logo {
+        align-items: center;
+      }
+
+      .credits-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-section">
+    <img src="ARES_LOGO.png" alt="Website Logo">
+    <h1>ARES</h1>
+  </div>
+
+  <div class="center-nav">
+    <a href="info.html">HOME</a>
+    <a href="products.html">PRODUCTS</a>
+    <a href="services.html">SERVICES</a>
+    <a href="faq.html">FAQ</a>
+    <a href="Info.html">INFO</a>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <select onchange="if(this.value) window.location.href='products.html#'+this.value">
+      <option value="">CATEGORY LIST</option>
+      <option value="roadbike">ROAD BIKE</option>
+      <option value="mountainbike">MOUNTAIN BIKE</option>
+      <option value="gravelbike">GRAVEL BIKE</option>
+      <option value="ebike">EBIKE</option>
+      <option value="groupsets">GROUPSETS</option>
+      <option value="accessories">ACCESSORIES</option>
+    </select>
+  </div>
+
+  <div class="cart-section">
+    <a href="cart.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart">   
+    </a>
+  </div>
+</header>
+
+<section>
+
+  <style>
+  .info-section {
+    padding: 120px 50px 50px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .info-section h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+  }
+
+  .info-box {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+  }
+
+  .info-box h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .info-box p {
+    line-height: 1.6;
+    text-align: justify;
+  }
+</style>
+
+<section class="info-section">
+
+  <div class="info-box">
+    <h2>MISSION</h2>
+    <p>
+      Our mission is to provide reliable, durable, and affordable bicycles that cater to the needs of everyday riders in the Philippines. We are committed to promoting safe and efficient transportation by offering high-quality bike products and services that support both beginners and experienced cyclists. Through continuous improvement and customer-focused service, we aim to ensure that every rider experiences comfort, safety, and satisfaction in every journey they take with our bicycles.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2>VISION</h2>
+    <p>
+      Our vision is to become one of the most trusted and recognized local bicycle brands in the Philippines, known for delivering long-lasting quality, honest service, and innovative cycling solutions. We aim to build a strong cycling community that encourages healthy living, environmental awareness, and active lifestyles. By continuously improving our products and services, we strive to be a brand that riders can depend on for both daily transportation and professional cycling needs.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2>ABOUT US</h2>
+    <p>
+      ARES Bikes is a locally established business based in Imus, Cavite that specializes in providing quality bicycles, cycling parts, and accessories. Our company was built with the goal of making cycling more accessible, practical, and affordable for Filipino riders. We focus on delivering products that combine durability, performance, and value for money. Over the years, we have served a growing number of customers who trust us not only for our products but also for our commitment to customer satisfaction and dependable service.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2>HISTORY</h2>
+    <p>
+      ARES Bikes was founded in 2014 as a small family-run business located in Anabu, Imus, Cavite. It started with a simple passion for bicycles and a goal to provide affordable and reliable bikes to the local community. From a small shop operation, the business slowly expanded through hard work, consistency, and the trust of its customers. As demand grew, ARES Bikes developed into a more established brand that continues to serve cyclists of different levels. Today, it stands as a growing local business dedicated to supporting the cycling community in Cavite and nearby areas.
+    </p>
+  </div>
+
+</section>
+
+<h2>CREDITS</h2>
+
+  <div class="credits-container">
+    <div class="credits-intro">
+      <p>We would like to acknowledge and give credit to the following sources for the images and videos used on this website.</p>
+    </div>
+
+    <div class="credit-section">
+      <h3>IMAGE CREDITS</h3>
+      <p><span class="credit-label">Source:</span> Decathlon.ph</p>
+      <p><span class="credit-label">Year:</span> 2024</p>
+      <p><span class="credit-label">Link:</span> <a href="https://www.decathlon.ph/c/cycling.html" target="_blank">https://www.decathlon.ph/c/cycling.html</a></p>
+      <p><span class="credit-label">Description:</span> Product images used throughout the website are sourced from Decathlon Philippines cycling collection.</p>
+    </div>
+
+    <div class="credit-section">
+      <h3>VIDEO CREDITS</h3>
+      <p><span class="credit-label">Source:</span> ColnagoWorld</p>
+      <p><span class="credit-label">Title:</span> Colnago V5Rs - The new racing allrounder for Tadej Pogačar</p>
+      <p><span class="credit-label">Date:</span> April 16, 2025</p>
+      <p><span class="credit-label">Platform:</span> YouTube</p>
+      <p><span class="credit-label">Link:</span> <a href="https://www.youtube.com/watch?v=GE068GN7p0Q" target="_blank">https://www.youtube.com/watch?v=GE068GN7p0Q</a></p>
+      <p><span class="credit-label">Description:</span> Video content featured on our homepage showcasing professional cycling technology.</p>
+    </div>
+  </div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section footer-logo">
+      <img src="ARES_LOGO.png" alt="ARES Logo">
+      <h3>ARES</h3>
+    </div>
+
+  <div class="footer-section">
+    <h3>About Us</h3>
+      <p>
+        Responsible<br>
+        Works at Ares<br>
+        Teamwork<br>
+        Philippine local company<br>
+        Commitment
+      </p>
+  </div>
+
+  <div class="footer-section">
+  <h3>History</h3>
+  <p>
+    Ares was founded in 2014 in Imus, Cavite, at Anabu Putol St near UCC School BLD.
+    Tristan’s dad started the business, and now it is a thriving family-run company.
+  </p>
+</div>
+
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <div>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>ARES1104@GMAIL.COM</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>ARESBIKECHOICE</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/><path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/><circle cx="18.406" cy="5.594" r="1.44"/></svg>
+          <span>ARESBIKECHOICE</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>ARESBIKECHOICE</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>IMUS CAVITE ANABU PUTOL ST NEAR UCC SCHOOL BLD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Copyright ARES Bikes. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
